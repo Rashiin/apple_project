@@ -1,0 +1,17 @@
+{
+  "name": "apple-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "node-sass --watch scss/ --output css/ --recursive",
+    "sassMinify" : "node-sass --watch scss/ --output css/ --output-style compressed  --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "node-sass": "^8.0.0"
+  }
+}
