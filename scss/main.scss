@@ -8,17 +8,21 @@ body {
   > div.wrapper {
     width: 100%;
     > div.menu {
-      width: inherit;
+      width: 100%;
+      position: relative;
       height: 45px;
       background-color: rgb(50, 50, 51);
       position: fixed;
+      display: flex;
       top: 0;
       z-index: 9999;
-
+      @include xs{
+        width: 100%;
+       position:relative;
+      }
       > nav {
         width: inherit;
         height: inherit;
-
         > ul {
           list-style: none;
           display: flex;
@@ -30,7 +34,6 @@ body {
             align-items: flex-start;
             gap: 10px;
           }
-
           > li {
             width: auto;
             height: inherit;
@@ -51,11 +54,12 @@ body {
                 font-size: 10px;
               }
               @include sm {
-                padding: 0 1px;
                 font-size: 0;
+                display: none;
               }
               @include xs {
                 font-size: 0;
+                display: none;
               }
 
               > svg {
@@ -86,7 +90,7 @@ body {
               > svg:nth-of-type(1) {
                 @include sm {
                   display: flex;
-                  left: 70px;
+                  left: 10%;
                 }
                 @include xs {
                   left: 20px;
@@ -94,17 +98,42 @@ body {
               }
             }
           }
-          > div {
+          > div:nth-of-type(2) {
             position: relative;
             height: 40px;
             width: 100px;
             display: flex;
             @include sm {
               position: absolute;
-              right: 20px;
+              right: 12%;
             }
             > li {
               padding: 0 5px;
+              width: inherit;
+              > a {
+                align-items: flex-end;
+                width: auto;
+                > svg {
+                  transform: scale(1, 1);
+                  -webkit-transform: scale(1, 1);
+                  -moz-transform: scale(1, 1);
+                  -ms-transform: scale(1, 1);
+                  -o-transform: scale(1, 1);
+                }
+              }
+            }
+          }
+          > div:nth-of-type(1) {
+            position: relative;
+            height: 40px;
+            width: 100px;
+            display: flex;
+            @include sm {
+              position: absolute;
+              left: 50%;
+            }
+            > li {
+              padding: 0 2px;
               width: inherit;
               > a {
                 align-items: flex-end;
@@ -119,6 +148,85 @@ body {
               }
             }
           }
+          > div.dropmenu {
+            display: none;
+            cursor: pointer;
+            position: relative;
+            transition: 300ms;
+            .bar {
+              width: 25px;
+              height: 2px;
+              margin: 3px auto;
+              transition: 0.3s;
+              -webkit-transition: 0.3s;
+              background-color: whitesmoke;
+              -moz-transition: 0.3s;
+              -ms-transition: 0.3s;
+              -o-transition: 0.3s;
+              position: relative;
+            }
+            @include sm {
+              display: flex;
+              flex-direction: column;
+              row-gap: 0px;
+              left: 88%;
+              position: absolute;
+              top: 8px;
+            }
+            > div.submenu {
+              width: 87vw;
+              height: calc(90vh - 100px);
+              background-color: #2b2b2b;
+              position: absolute;
+              top: 35px;
+              right: 0;
+              display: none;
+              > input {
+                width: 80vw;
+                position: relative;
+                top: 10px;
+                left: 5px;
+                height: 20px;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                padding: 10px;
+                background-color: #5f5d5d;
+                color: black;
+              }
+              > div {
+                display: flex;
+                flex-flow: column wrap;
+                position: relative;
+                width: 80vw;
+                align-items: flex-start;
+                top: 20px;
+                transition: 300ms;
+                > div.line {
+                  border-bottom: 1px solid #5f5d5d;
+                  margin: 8px;
+                  width: 80vw;
+                }
+                > a {
+                  text-decoration: none;
+                  color: lightgray;
+                  margin: 10px;
+                  font-style: oblique;
+                  transition: 400ms;
+                  -webkit-transition: 400ms;
+                  -moz-transition: 400ms;
+                  -ms-transition: 400ms;
+                  -o-transition: 400ms;
+                  &:hover {
+                    color: #5f5d5d;
+                    font-size: 20px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -129,7 +237,6 @@ body {
       background-image: url("../images/hero_iphone14__fjmsqstr1ceq_large_2x.jpg");
       background-repeat: no-repeat;
       background-position: center center;
-
       background-size: cover;
       display: flex;
       box-sizing: border-box;
@@ -253,19 +360,29 @@ body {
     > div.parallax4 {
       position: relative;
       top: 30px;
-      width: 100%;
+      width: 99%;
+      left: calc(50% - 99% / 2);
       flex-flow: row wrap;
       display: flex;
       box-sizing: border-box;
-      gap: 7px;
+      gap: 10px;
       padding: 7px;
       justify-content: center;
       > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
         padding-top: 18px;
-        width: 700px;
+        width: 48%;
         height: 600px;
         color: whitesmoke;
         background-color: black;
+        @include sm{
+          width: 100%;
+        }
+        @include xs{
+          width: 100%;
+        }
       }
       > div:nth-of-type(1) {
         background-image: url("../images/promo_iphone14pro__4n4twj56fzmu_large_2x\ \(1\).jpg");
@@ -273,6 +390,7 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
 
@@ -568,6 +686,11 @@ body {
           align-items: flex-start;
           text-align: start;
         }
+        @include xs {
+          display: flex;
+          align-items: flex-start;
+          text-align: start;
+        }
       }
       > hr {
         width: 800px;
@@ -586,25 +709,36 @@ body {
         padding: 7px;
         justify-content: center;
         height: 450px;
+        @include sm {
+          display: none;
+          position: relative;
+          height: 0;
+          width: 0;
+          justify-content: flex-start;
+          padding: 0;
+         }
+         @include xs {
+          display: none;
+          position: relative;
+          height: 0;
+          width: 0;
+          justify-content: flex-start;
+          padding: 0;
+         }
         > div {
           padding-top: 20px;
           width: 200px;
           height: 400px;
           justify-content: center;
           text-align: start;
+          @include lg {
+            width: 150px;
+            height: 330px;
+          }
           @include md {
             width: 120px;
             height: 300px;
           }
-          @include sm {
-            width: 90px;
-            height: 270px;
-          }
-          @include xs {
-            width: 90px;
-            height: 250px;
-          }
-
           > a {
             color: #2b2b2b;
             display: block;
@@ -620,10 +754,10 @@ body {
               font-size: 13px;
             }
             @include sm {
-              font-size: 11px;
+              display: none;
             }
             @include xs {
-              font-size: 9px;
+              display: none;
             }
           }
           > div {
@@ -639,6 +773,9 @@ body {
                 font-size: 13px;
               }
               @include sm {
+                font-size: 11px;
+              }
+              @include xs {
                 font-size: 10px;
               }
             }
@@ -654,6 +791,45 @@ body {
         width: 800px;
         display: block;
         margin: auto;
+      }
+      >div.minitext{
+        display: none;
+        position: relative;
+        top: 5px;
+        width: 100%;
+        > div.line {
+          border-bottom: 1px solid #5f5d5d;
+          margin: 8px;
+          width: 100%;
+        }
+        @include sm{
+         display: flex;
+        flex-flow: column wrap;
+        position: relative;
+        width: 100%;
+        align-items: flex-start;
+        }
+        @include xs{
+        display: flex;
+        align-items: flex-start;
+        flex-flow: column wrap;
+        position: relative;
+        width: 100%;
+        }
+        >a{
+           color: #5f5d5d;
+           text-decoration: none;
+           font-size: 15px;
+           margin: 5px;
+           transition: 400ms;
+           -webkit-transition: 400ms;
+           -moz-transition: 400ms;
+           -ms-transition: 400ms;
+           -o-transition: 400ms;
+           &:hover{
+            color: #2b2b2b;
+           }
+}
       }
     }
     @keyframes change {
@@ -791,14 +967,12 @@ body {
         padding-top: 8px;
         width: auto;
         height: 100px;
-        justify-content: flex-end;
         > h1 {
           position: relative;
           justify-content: center;
           top: 180;
           font-size: 100px;
           font-weight: bold;
-          position: relative;
           text-align: center;
           color: whitesmoke;
           z-index: 1;
@@ -1005,12 +1179,14 @@ body {
       top: 680px;
       width: 96%;
       left: calc(50% - 96% / 2);
-      height: calc(80% - 50px);
+      height: 440px;
       padding-bottom: 35px;
       padding-top: 40px;
       background-color: whitesmoke;
-      padding-left: 20px;
-      padding-right: 20px;
+      overflow: hidden;
+      padding-left: 2px;
+      padding-right: 2px;
+
       .swiper {
         width: 100%;
         height: 100%;
@@ -1041,16 +1217,18 @@ body {
         -o-border-radius: 10px;
         > div.image-slider {
           overflow: hidden;
-          width: 98%;
-          padding: 20px;
+          width: 90%;
+          left: calc(50% - 90% / 2);
+          position: relative;
+          padding: 5px;
           border-radius: 10px;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
           -ms-border-radius: 10px;
           -o-border-radius: 10px;
           > img {
-            width: inherit;
-            height: 340px;
+            width: 70%;
+            height: 320px;
             border-radius: 15px;
             -webkit-border-radius: 15px;
             -moz-border-radius: 15px;

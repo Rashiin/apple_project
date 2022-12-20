@@ -13,8 +13,9 @@
         <div class="menu">
             <nav>
                 <ul>
+                    <div>
                     <li><a href="#"><svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 48h17v-48h-17z"/><path d="m8.7168 16.7837c-.097 0-.193-.012-.253-.024-.012-.048-.036-.193-.036-.337 0-.963.493-1.913 1.023-2.515.674-.782 1.793-1.372 2.731-1.408.024.109.036.241.036.373 0 .951-.409 1.902-.986 2.587-.614.759-1.673 1.324-2.515 1.324m6.858 2.045c-.108.085-2.009 1.156-2.009 3.538 0 2.755 2.419 3.73 2.491 3.754-.012.06-.385 1.336-1.276 2.636-.794 1.143-1.624 2.286-2.888 2.286-1.263 0-1.588-.735-3.044-.735-1.42 0-1.925.759-3.08.759-1.156 0-1.962-1.059-2.888-2.359-1.071-1.528-1.937-3.898-1.937-6.149 0-3.609 2.346-5.523 4.656-5.523 1.228 0 2.25.807 3.02.807.735 0 1.878-.854 3.273-.854.53 0 2.431.047 3.682 1.84" fill="#fff"/></g></svg></a></li>
-                
+                    </div>
                     <li><a href="#">Store</a></li>
                     <li><a href="#">Mac</a></li>
                     <li><a href="#">iPad</a></li>
@@ -28,6 +29,32 @@
                    <div>
                     <li><a href="#"><svg height="44" viewBox="0 0 13 44" width="13" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 44h13v-44h-13z"/><path d="m12 25.9c0 .6-.5 1.1-1.1 1.1h-8.8c-.6 0-1.1-.5-1.1-1.1v-7.9c0-.5.5-1 1.1-1h8.9c.6 0 1.1.5 1.1 1.1v7.8zm-5.5-11.9c1.2 0 2.1.9 2.3 2h-4.6c.2-1.1 1.1-2 2.3-2zm4.4 2h-1.1c-.2-1.7-1.6-3-3.3-3s-3.1 1.3-3.3 3h-1.1c-1.2 0-2.1.9-2.1 2.1v7.9c0 1.1.9 2 2.1 2h8.9c1.1 0 2.1-.9 2.1-2.1v-7.9c-.1-1.1-1-2-2.2-2z" fill="#fff"/></g></svg></a></li>
                     <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="88" viewBox="0 0 15 88"><rect width="15" height="44" fill="none"/><path d="M13.98,27.343l-3.5-3.5a5.436,5.436,0,1,0-.778.777l3.5,3.5a.55.55,0,1,0,.778-.778ZM1.959,20.418a4.319,4.319,0,1,1,4.319,4.32A4.323,4.323,0,0,1,1.959,20.418Z" fill="#fff"/></svg></a></li>
+                   </div>
+                   <div class="dropmenu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <div class="submenu">
+                        <input type="searchTerm" placeholder="search apple.com">
+                        <div>
+                            <a href="#">Store</a>
+                            <div class="line"></div>
+                            <a href="#">Mac</a>
+                            <div class="line"></div>
+                            <a href="#">iPad</a>
+                            <div class="line"></div>
+                            <a href="#">Watch</a>
+                            <div class="line"></div>
+                            <a href="#">Airpods</a>
+                            <div class="line"></div>
+                            <a href="#">Tv & Home</a>
+                            <div class="line"></div>
+                            <a href="#">Only on Apple</a>
+                            <div class="line"></div>
+                            <a href="#">Support</a>
+                        </div>
+
+                    </div>
                    </div>
                 </ul>
             </nav>
@@ -215,16 +242,45 @@ Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
                     <a href="#">Contact Apple</a>
                 </div>
             </div>
+            <div class="minitext">
+                <a href="#">Shop and Learn</a>
+                <div class="line"></div>
+                <a href="#">Services</a>
+                <div class="line"></div>
+                <a href="#">Account</a>
+                <div class="line"></div>
+                <a href="#">Apple Store</a>
+                <div class="line"></div>
+                <a href="#">For Education</a>
+                <div class="line"></div>
+                <a href="#">For Healthcare</a>
+                <div class="line"></div>
+                <a href="#">Apple Values</a>
+                <div class="line"></div>
+                <a href="#">About Apple</a>
+            </div>
                 <p>More ways to shop: <span style="color: blue;">Find an Apple Store or other retailer </span> you. Or call 1-800-MY-APPLE.</p>
                <hr style="color: lightgray;">
                <p>Copyright © 2022 Apple Inc. All rights reserved.</p>
             
         </div>
      </div>
-
-
-
-
+     <script>
+        let menu = document.querySelector("div.menu>nav>ul>div:nth-of-type(3)")
+        let subMenu=document.querySelector("div.submenu")
+        let flag=true
+       menu.addEventListener("click",function(){
+        if(flag===true)
+           {
+            subMenu.style.display="block"
+            flag=false
+           }
+           else{
+            subMenu.style.display="none"
+            flag=true
+           }
+       })
+     </script>
       <script src="./swiper/swiper-bundle.min.js"></script>
        <!-- Initialize Swiper -->
        <script>
@@ -238,19 +294,5 @@ Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.
           },
         });
       </script>
-     <script>
-        var onscrollhandler = function(){
-            var newimage = yourimageelements.src;
-            var scrotop = document.documentElement.scrollTop || document.body.scrollTop;
-            if (scrotop >100){
-                newimage = "https://www.apple.com/v/home/aw/images/heroes/holiday-2022/memoji02/hero_startframe__dbi4flqyio2u_largetall_2x.jpg"
-            }
-            if (scrotop>200){
-                newimage = "https://www.apple.com/v/home/aw/images/heroes/holiday-2022/hero_endframe__8xosbwdvpaqe_largetall_2x.jpg"
-            }
-            yourimageelements.src = newimage;
-        };
-        object.addEventListener ("scroll" , onscrollhandler);
-     </script>
 </body>
 </html>
