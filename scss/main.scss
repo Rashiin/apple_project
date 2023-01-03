@@ -6,6 +6,7 @@
 }
 body {
   > div.wrapper {
+    overflow: hidden;
     width: 100%;
     > div.menu {
       width: 100%;
@@ -32,7 +33,7 @@ body {
           gap: 0 3px;
           @include sm {
             align-items: flex-start;
-            gap: 10px;
+            gap: 7px;
           }
           > li {
             width: auto;
@@ -51,6 +52,7 @@ body {
                 color: white;
               }
               @include md {
+                padding: 8px;
                 font-size: 10px;
               }
               @include sm {
@@ -107,6 +109,10 @@ body {
               position: absolute;
               right: 12%;
             }
+            @include xs {
+              position: absolute;
+              right: 12%;
+            }
             > li {
               padding: 0 5px;
               width: inherit;
@@ -120,6 +126,7 @@ body {
                   -ms-transform: scale(1, 1);
                   -o-transform: scale(1, 1);
                 }
+
               }
             }
           }
@@ -129,6 +136,10 @@ body {
             width: 100px;
             display: flex;
             @include sm {
+              position: absolute;
+              left: 50%;
+            }
+            @include xs {
               position: absolute;
               left: 50%;
             }
@@ -173,8 +184,16 @@ body {
               position: absolute;
               top: 8px;
             }
+            @include xs {
+              display: flex;
+              flex-direction: column;
+              row-gap: 0px;
+              left: 88%;
+              position: absolute;
+              top: 8px;
+            }
             > div.submenu {
-              width: 87vw;
+              width:87vw;
               height: calc(90vh - 100px);
               background-color: #2b2b2b;
               position: absolute;
@@ -182,10 +201,10 @@ body {
               right: 0;
               display: none;
               > input {
-                width: 80vw;
+                width: 78vw;
                 position: relative;
                 top: 10px;
-                left: 5px;
+                left: 8px;
                 height: 20px;
                 border-radius: 10px;
                 -webkit-border-radius: 10px;
@@ -229,6 +248,48 @@ body {
           }
         }
       }
+    }
+    >div.parallax5{
+        margin-top: 40px;
+        width: 100%;
+        height: 550px;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        >div{
+          padding-top: 8px;
+          width: auto;
+          height: 100px;
+          >img:nth-of-type(2){
+            width: 100%;
+            height:auto;
+          }
+          >img:nth-of-type(1){
+            width: 120px;
+          }
+          > h2 {
+            font-size: 50px;
+            font-weight: normal;
+          }
+          > h4 {
+            font-weight: lighter;
+            text-align: center;
+            font-size: 25px;
+          }
+          > div {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+            > a {
+              font-size: 18px;
+              text-decoration: none;
+            }
+          }
+        }
+      
     }
     > div.parallax {
       margin-top: 40px;
