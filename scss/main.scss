@@ -27,10 +27,10 @@ body {
         > ul {
           list-style: none;
           display: flex;
-          justify-content: center;
+          justify-content:space-evenly;
           width: inherit;
           height: inherit;
-          gap: 0 3px;
+  
           @include sm {
             align-items: flex-start;
             gap: 7px;
@@ -66,7 +66,7 @@ body {
 
               > svg {
                 display: flex;
-                gap: 10px;
+                gap: 5px;
                 transform: scale(1, 1);
                 -webkit-transform: scale(1, 1);
                 -moz-transform: scale(1, 1);
@@ -87,7 +87,7 @@ body {
                   -moz-transform: scale(1.2, 1.2);
                   -ms-transform: scale(1.2, 1.2);
                   -o-transform: scale(1.2, 1.2);
-                }
+}
               }
               > svg:nth-of-type(1) {
                 @include sm {
@@ -155,7 +155,7 @@ body {
                   -moz-transform: scale(1.2, 1.2);
                   -ms-transform: scale(1.2, 1.2);
                   -o-transform: scale(1.2, 1.2);
-                }
+}
               }
             }
           }
@@ -200,8 +200,11 @@ body {
               top: 35px;
               right: 0;
               display: none;
+              @include xs{
+            height: 35rem;
+              }
               > input {
-                width: 78vw;
+                width: 76vw;
                 position: relative;
                 top: 10px;
                 left: 8px;
@@ -211,9 +214,10 @@ body {
                 -moz-border-radius: 10px;
                 -ms-border-radius: 10px;
                 -o-border-radius: 10px;
-                padding: 10px;
+                padding:10px 10px;
                 background-color: #5f5d5d;
-                color: black;
+                color: whitesmoke;
+
               }
               > div {
                 display: flex;
@@ -230,7 +234,7 @@ body {
                 }
                 > a {
                   text-decoration: none;
-                  color: lightgray;
+                  color: whitesmoke;
                   margin: 10px;
                   font-style: oblique;
                   transition: 400ms;
@@ -738,6 +742,7 @@ body {
       top: 30px;
       > p {
         margin-top: 20px;
+        padding: 5px;
         color: gray;
         font-size: 12px;
         text-align: center;
@@ -799,6 +804,7 @@ body {
           @include md {
             width: 120px;
             height: 300px;
+  
           }
           > a {
             color: #2b2b2b;
@@ -812,7 +818,7 @@ body {
               color: gray;
             }
             @include md {
-              font-size: 13px;
+              font-size: 12px;
             }
             @include sm {
               display: none;
